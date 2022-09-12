@@ -6,25 +6,27 @@
     <title>Learning Vue</title>
     <script src="https://unpkg.com/vue@3"></script>
     <style>
-        .box {
-            padding: 100px 0;
-            width: 400px;
-            text-align: center;
-            background: #ddd;
-            margin: 20px;
-            display: inline-block;
-        }
+      .box {
+        padding: 100px 0;
+        width: 400px;
+        text-align: center;
+        background: #ddd;
+        margin: 20px;
+        display: inline-block;
+      }
     </style>
   </head>
   <body>
     <h1>Hello Vue</h1>
 
     <div id="app">
+      <a v-bind:href="url">Vue website link</a>
       <div v-if="showBooks">
         <ul>
-            <li v-for="book in books">
-               <h3>{{book.title}} - {{book.author}}</h3>
-            </li>
+          <li v-for="book in books">
+            <img :src="book.img" :alt="book.title">
+            <h3>{{book.title}} - {{book.author}}</h3>
+          </li>
         </ul>
       </div>
 
@@ -32,9 +34,7 @@
         <span v-if="showBooks">Hide Books</span>
         <span v-else>Show Books</span>
       </button>
-
     </div>
     <script src="app.js"></script>
   </body>
 </html>
-
