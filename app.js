@@ -22,7 +22,7 @@ const app = Vue.createApp({
           img: "assets/3.jpg",
           isFav: true,
         },
-      ],
+      ],           
     };
   },
 
@@ -32,8 +32,13 @@ const app = Vue.createApp({
     },
     toggleFavourite(book){
         book.isFav = !book.isFav;
-    }
+    },
   },
+  computed: {
+    filteredBooks(){
+        return this.books.filter((book) => book.isFav)
+    }
+}
 });
 
 app.mount("#app");
