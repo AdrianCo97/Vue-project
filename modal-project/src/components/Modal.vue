@@ -2,6 +2,7 @@
     <div class="backdrop">
         <div class="modal">
             <h1>{{header}}</h1>
+            <p>{{text}}</p>
             <p>modal content</p>
         </div>
     </div>
@@ -10,7 +11,8 @@
 <script>
     export default {
         props: [
-            'header'
+            'header',
+            'text'
         ]
     }
 </script>
